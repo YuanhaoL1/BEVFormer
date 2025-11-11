@@ -5,6 +5,7 @@
 #  Modified by Zhiqi Li
 # ---------------------------------------------
 
+from typing import Any
 import numpy as np
 import torch
 import copy
@@ -182,7 +183,7 @@ class BEVFormerEncoder(TransformerLayerSequence):
                 [num_layers, num_query, bs, embed_dims].
         """
 
-        output = bev_query
+        output: Any = bev_query
         intermediate = []
 
         ref_3d = self.get_reference_points(
